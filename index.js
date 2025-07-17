@@ -1,5 +1,6 @@
 import express from "express";
 import routes from "./routes/routes.js";
+import { SERVER_PORT } from "./config.js";
 
 const app = express();
 
@@ -14,6 +15,6 @@ app.use((req, res, next) => {
   });
 });
 
-app.listen(8080, () => {
-  console.log(`🚀 ~ app.listen ~ 8080`);
+app.listen(SERVER_PORT, () => {
+  console.log(`Aplicación escuchando en puerto ${SERVER_PORT}`);
 });

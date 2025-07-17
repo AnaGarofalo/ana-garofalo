@@ -1,12 +1,8 @@
 import { Router } from "express";
-import controller from "../container/container.js";
-import nameMidlewareValidate from "../midlewares/nameMidlewareValidate.js";
+import avionesRouter from "./avionesRouter.js";
 
 const routes = Router();
 
-routes.get("/", controller.getAll);
-routes.get("/:id", controller.getById);
-routes.use(nameMidlewareValidate);
-routes.post("/", controller.create);
+routes.use("/aviones", avionesRouter);
 
 export default routes;
